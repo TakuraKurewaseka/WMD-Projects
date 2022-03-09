@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>Multiplication Table</title>
         <meta charset="utf-8">
         <style>
-            table{ border-collapse: collapse;}
+            table{
+                border-collapse: collapse;
+            }
+            table, tr, td{
+                border: 1px solid turquoise;
+            }
             td{
-                padding: auto;
+                padding: 5px;
                 text-align: center;
             }
-            table, td, tr{ border: 1px solid blueviolet;}
-            tr:nth-child(1){background-color: chocolate;}
-            tr>td:nth-child(1){background-color: bisque;}
-            table tr:hover{background-color: darkgreen;}
-            table td:hover{background-color: brown;}
-
+            tr:nth-child(1){
+                background-color: aqua;
+            }
+            tr>td:nth-child(1){
+                background-color: aqua;
+            }
+            table>tbody>tr:hover{
+                background-image: radial-gradient(greenyellow, honeydew, yellow);
+            }
         </style>
     </head>
+
     <body>
+
         <h1>Multiplication Table</h1>
-        
+
         <script>
-            document.write("<table>");
-                for(x = 0; x < 10; x++ ){
-                document.write("<tr>");
-                    for(i = 0; i < 10; i++ ){
-                    document.write("<td>" + ((x==0)?1:x) * ((i==0)?1:i) + ((x=0 && i==0)?"x":i&&x) + "</td>");
-                    }
-                document.write("</tr>");
+
+            document.write("<table id='tbl' class='table' name='multipable' td='content editable'>");
+                for(k=0; k<100; k++){
+                    document.write("<tr>");
+                        for(i=0; i<100; i++){
+                            document.write("<td onclick=showmsg(this)>"+  ((k==0 && i==0)? "X" :  ((k==0)?1:k) * ((i==0)?1:i))  +"</td>");
+                        }
+                    document.write("</tr>");
                 }
             document.write("</table>");
-                
+
+
+                function showmsg(cell){
+                    alert('You selected : '+ cell.innerText);
+                }
         </script>
+
     </body>
+
     <footer>
-        <p id="pfooter">Copyright@Multiplication Table-2022</p>
+        <p id="pfooter">Copyright@MultiplicationTable-2022</p>
     </footer>
+
 </html>

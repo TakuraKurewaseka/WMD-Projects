@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multiplication Table</title>
+        <meta charset="utf-8">
+        <style>
+            table{ border-collapse: collapse;}
+            td{
+                padding: auto;
+                text-align: center;
+            }
+            table, td, tr{ border: 1px solid blueviolet;}
+            tr:nth-child(1){background-color: chocolate;}
+            tr>td:nth-child(1){background-color: bisque;}
+            table tr:hover{background-color: darkgreen;}
+            table td:hover{background-color: brown;}
+
+        </style>
+    </head>
+    <body>
+        <h1>Multiplication Table</h1>
+        
+        <script>
+            document.write("<table>");
+                for(x = 0; x < 10; x++ ){
+                document.write("<tr>");
+                    for(i = 0; i < 10; i++ ){
+                    document.write("<td>" + ((x==0)?1:x) * ((i==0)?1:i) + ((x=0 && i==0)?"x":i&&x) + "</td>");
+                    }
+                document.write("</tr>");
+                }
+            document.write("</table>");
+                
+        </script>
+    </body>
+    <footer>
+        <p id="pfooter">Copyright@Multiplication Table-2022</p>
+    </footer>
+</html>
